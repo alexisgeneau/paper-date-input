@@ -16,17 +16,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../iron-form-element-behavior/iron-form-element-behavior.html">
 
 <!--
-An element providing a solution to no problem in particular.
+paper-date-input is an input element with validation and customisable format for the dates.
+You can custom format by using the attribute 'date-format' and put in value something like 'YYYY-MM-DD'.
+'Y' is for year, 'M' for the month, 'D' for the day.
+Day and month can be on two characters and year can also be on four characters.
+By using the attribute 'to-timestamp', the return value will be a timestamp.
 
 Example:
 
-    <paper-date-input></paper-date-input>
-
-Example:
-
-    <paper-date-input>
-      <h2>Hello paper-date-input</h2>
-    </paper-date-input>
+    <paper-date-input date-format="YYYY/MM/DD" to-timestamp></paper-date-input>
 
 @demo demo/index.html
 @hero hero.svg
@@ -59,7 +57,7 @@ Example:
     <paper-input-container>
       <label hidden$="[[!label]]">[[label]]</label>
 
-      <div class="container" id="container">
+      <div class="container" id="container" align="center">
         <input is="iron-input"
                id="a"
                type="tel"
@@ -232,6 +230,7 @@ Example:
           this._returnValue(date);
         } else {
           console.warn(date);
+          this.value="Invalid date"
         }
       },
       _returnValue: function (date) {
@@ -247,7 +246,6 @@ Example:
             value += order[i].value;
           }
           this.value = value;
-          console.log(this.value);
         }
       }
     });

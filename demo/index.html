@@ -15,11 +15,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <title>paper-date-input Demo</title>
   <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../paper-date-input.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+
 </head>
 <body unresolved>
-<template is="dom-bind">
-  <paper-date-input date-format="DD-MM-YYYY" value="{{value}}"></paper-date-input>
-  <h2>[[value]]</h2>
-</template>
+<style is="custom-style" include="demo-pages-shared-styles">
+  .vertical-section-container {
+    max-width: 700px;
+  }
+</style>
+<div class="vertical-section-container centered">
+  <style is="custom-style">
+    paper-date-input {
+      width:30%;
+    }
+  </style>
+  <demo-snippet class="centered-demo">
+    <template>
+      <template is="dom-bind">
+        <paper-date-input date-format="YYYY/MM/DD" value="{{value}}"></paper-date-input>
+        <h2>[[value]]</h2>
+      </template>
+    </template>
+  </demo-snippet>
+  <demo-snippet class="centered-demo">
+    <template>
+      <template is="dom-bind">
+        <paper-date-input date-format="YYYY/MM/DD" value="{{value}}" to-timestamp></paper-date-input>
+        <h2>[[value]]</h2>
+      </template>
+    </template>
+  </demo-snippet>
+</div>
 </body>
 </html>
